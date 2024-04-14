@@ -1,0 +1,7 @@
+<div class="contacts-wrapper">
+    <div *ngFor="let contact of (contactsSignal() | sortContactsByName); trackBy: trackByName">
+        {{contact.name}}
+        <img [src]="contact.image"/>
+        <!--            <img src="assets/images/man1.png">-->
+    </div>
+</div>
