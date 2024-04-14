@@ -1,0 +1,209 @@
+{
+  "data": [
+      {
+        "name": "John Doe",
+        "full_address": "123 Main St, Anytown, USA",
+        "email": "john.doe@example.com",
+        "phone": "+1234567890",
+        "cell": "+1987654321",
+        "registration_date": "2024-04-13",
+        "age": 35,
+        "image": "assets/images/man1.png",
+        "isFavorite": true
+      },
+      {
+        "name": "Jane Smith",
+        "full_address": "456 Elm St, Sometown, USA",
+        "email": "jane.smith@example.com",
+        "phone": "+1987654321",
+        "cell": "+1234567890",
+        "registration_date": "2024-04-12",
+        "age": 28,
+        "image": "assets/images/woman3.png",
+        "isFavorite": true
+      },
+      {
+        "name": "Michael Johnson",
+        "full_address": "789 Oak St, Villageville, USA",
+        "email": "michael.johnson@example.com",
+        "phone": "+1122334455",
+        "cell": "+9988776655",
+        "registration_date": "2024-04-11",
+        "age": 42,
+        "image": "assets/images/man2.png"
+      },
+      {
+        "name": "Emily Davis",
+        "full_address": "101 Pine St, Foresttown, USA",
+        "email": "emily.davis@example.com",
+        "phone": "+3322114455",
+        "cell": "+5566778899",
+        "registration_date": "2024-04-10",
+        "age": 31,
+        "image": "assets/images/woman3.png"
+      },
+      {
+        "name": "Daniel Wilson",
+        "full_address": "321 Cedar St, Hilltown, USA",
+        "email": "daniel.wilson@example.com",
+        "phone": "+7788990011",
+        "cell": "+1122334455",
+        "registration_date": "2024-04-09",
+        "age": 37,
+        "image": "assets/images/man3.png",
+        "isFavorite": true
+      },
+      {
+        "name": "Sarah Brown",
+        "full_address": "567 Maple St, Villagetown, USA",
+        "email": "sarah.brown@example.com",
+        "phone": "+5544332211",
+        "cell": "+9900112233",
+        "registration_date": "2024-04-08",
+        "age": 29,
+        "image": "assets/images/woman3.png"
+      },
+      {
+        "name": "David Martinez",
+        "full_address": "789 Walnut St, Grovetown, USA",
+        "email": "david.martinez@example.com",
+        "phone": "+6677889900",
+        "cell": "+4455667788",
+        "registration_date": "2024-04-07",
+        "age": 45,
+        "image": "assets/images/man1.png"
+      },
+      {
+        "name": "Jessica Taylor",
+        "full_address": "910 Cherry St, Orchardville, USA",
+        "email": "jessica.taylor@example.com",
+        "phone": "+1122334455",
+        "cell": "+9988776655",
+        "registration_date": "2024-04-06",
+        "age": 33,
+        "image": "assets/images/woman3.png",
+        "isFavorite": true
+      },
+      {
+        "name": "Christopher Anderson",
+        "full_address": "1213 Ash St, Woodville, USA",
+        "email": "christopher.anderson@example.com",
+        "phone": "+4455667788",
+        "cell": "+6677889900",
+        "registration_date": "2024-04-05",
+        "age": 39,
+        "image": "assets/images/man1.png"
+      },
+      {
+        "name": "Amanda Wilson",
+        "full_address": "1415 Birch St, Parktown, USA",
+        "email": "amanda.wilson@example.com",
+        "phone": "+9988776655",
+        "cell": "+1122334455",
+        "registration_date": "2024-04-04",
+        "age": 27,
+        "image": "assets/images/woman3.png",
+        "isFavorite": true
+      },
+      {
+        "name": "James Brown",
+        "full_address": "1617 Cedar St, Hilltown, USA",
+        "email": "james.brown@example.com",
+        "phone": "+5566778899",
+        "cell": "+3322114455",
+        "registration_date": "2024-04-03",
+        "age": 40,
+        "image": "assets/images/man3.png"
+      },
+      {
+        "name": "Olivia Jones",
+        "full_address": "1819 Elm St, Rivertown, USA",
+        "email": "olivia.jones@example.com",
+        "phone": "+9900112233",
+        "cell": "+5544332211",
+        "registration_date": "2024-04-02",
+        "age": 36,
+        "image": "assets/images/woman3.png"
+      },
+      {
+        "name": "Matthew Clark",
+        "full_address": "2021 Fir St, Mountainville, USA",
+        "email": "matthew.clark@example.com",
+        "phone": "+9988776655",
+        "cell": "+1122334455",
+        "registration_date": "2024-04-01",
+        "age": 32,
+        "image": "assets/images/man1.png"
+      },
+      {
+        "name": "Sophia Rodriguez",
+        "full_address": "2223 Pine St, Forestville, USA",
+        "email": "sophia.rodriguez@example.com",
+        "phone": "+1122334455",
+        "cell": "+9988776655",
+        "registration_date": "2024-03-31",
+        "age": 38,
+        "image": "assets/images/woman3.png"
+      },
+      {
+        "name": "Jacob Hernandez",
+        "full_address": "2425 Oak St, Villageton, USA",
+        "email": "jacob.hernandez@example.com",
+        "phone": "+5566778899",
+        "cell": "+3322114455",
+        "registration_date": "2024-03-30",
+        "age": 25,
+        "image": "assets/images/man2.png"
+      },
+      {
+        "name": "Isabella Lee",
+        "full_address": "2627 Maple St, Parkville, USA",
+        "email": "isabella.lee@example.com",
+        "phone": "+5544332211",
+        "cell": "+9900112233",
+        "registration_date": "2024-03-29",
+        "age": 41,
+        "image": "assets/images/woman3.png"
+      },
+      {
+        "name": "Ethan Lewis",
+        "full_address": "2829 Walnut St, Orchardtown, USA",
+        "email": "ethan.lewis@example.com",
+        "phone": "+3322114455",
+        "cell": "+5566778899",
+        "registration_date": "2024-03-28",
+        "age": 30,
+        "image": "assets/images/man3.png"
+      },
+      {
+        "name": "Mia Walker",
+        "full_address": "3031 Cherry St, Hillville, USA",
+        "email": "mia.walker@example.com",
+        "phone": "+9988776655",
+        "cell": "+1122334455",
+        "registration_date": "2024-03-27",
+        "age": 34,
+        "image": "assets/images/woman3.png"
+      },
+      {
+        "name": "Noah Perez",
+        "full_address": "3233 Ash St, Woodtown, USA",
+        "email": "noah.perez@example.com",
+        "phone": "+1122334455",
+        "cell": "+9988776655",
+        "registration_date": "2024-03-26",
+        "age": 26,
+        "image": "assets/images/man1.png"
+      },
+      {
+        "name": "Ava Hall",
+        "full_address": "3435 Birch St, Villageville, USA",
+        "email": "ava.hall@example.com",
+        "phone": "+5566778899",
+        "cell": "+3322114455",
+        "registration_date": "2024-03-25",
+        "age": 39,
+        "image": "assets/images/woman3.png"
+      }
+    ]
+}
