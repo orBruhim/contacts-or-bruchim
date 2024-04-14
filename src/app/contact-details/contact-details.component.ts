@@ -1,6 +1,6 @@
-import {Component, OnDestroy, OnInit, signal, Signal} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {of, Subscription, switchMap, tap} from "rxjs";
+import { Subscription, switchMap, tap} from "rxjs";
 import {ContactsService} from "../contacts/contacts.service";
 import {Contact} from "../app.interface";
 
@@ -12,7 +12,7 @@ import {Contact} from "../app.interface";
 export class ContactDetailsComponent implements OnInit, OnDestroy{
 
   subscriptions= new Subscription();
-  contact: Contact | null= null;
+  contact!: Contact;
   constructor(private activatedRoute: ActivatedRoute, private contactsService: ContactsService) {
   }
   ngOnInit(): void {
@@ -28,8 +28,8 @@ export class ContactDetailsComponent implements OnInit, OnDestroy{
         switchMap((params) => {
           return this.contactsService.getContactById(params['id'])
         }),
-        tap((contact: Contact) => {
-          this.contact= contact;
+        tap((contact: any) => {
+          this.contact= contact[0];
         })
     ).subscribe();
     this.subscriptions.add(sub);

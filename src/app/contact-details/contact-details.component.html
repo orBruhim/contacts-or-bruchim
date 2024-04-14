@@ -1,1 +1,17 @@
-<p>contact-details works!</p>
+<div *ngIf="contact"
+     class="contact-wrapper">
+    <div class="img-wrapper">
+        <img  [src]="contact.image"/>
+    </div>
+    <div class="detail-wrapper">
+        <span class="name"> {{contact.name | titleCase}}</span>
+        <span class="address"> {{contact.full_address | titleCase}}</span>
+        <span class="address">Email: {{contact.email}}</span>
+        <span class="address">Phone: {{contact.phone}}</span>
+        <span class="address"> Cell: {{contact.cell}}</span>
+        <span class="address">Registration Date : {{contact.registration_date}}</span>
+        <span class="address"> Age: {{contact.age}}</span>
+    </div>
+</div>
+
+

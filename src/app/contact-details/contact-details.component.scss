@@ -1,0 +1,32 @@
+.contact-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+
+  img {
+    border-radius: 50%;
+    height: 160px;
+    width: 160px;
+    border: 2px solid #80808075;
+  }
+
+  .detail-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .name {
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .address {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}
