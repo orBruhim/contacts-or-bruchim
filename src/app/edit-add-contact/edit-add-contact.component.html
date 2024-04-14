@@ -61,5 +61,8 @@
             <input type="checkbox" formControlName="isFavorite">
         </div>
         <button type="submit" class="submit-button">Submit</button>
+        <div *ngIf="!isFormValid" class="form-is-not-valid">
+            Form is not valid please fix the red inputs
+        </div>
     </form>
 </div>

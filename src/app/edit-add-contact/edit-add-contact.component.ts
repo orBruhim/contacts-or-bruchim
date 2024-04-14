@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ContactsService} from "../contacts/contacts.service";
 import {Subscription, switchMap, tap} from "rxjs";
 import {Contact} from "../app.interface";
@@ -14,10 +14,12 @@ export class EditAddContactComponent implements OnInit, OnDestroy{
   contactForm!: FormGroup;
   editContact: Contact| null= null;
   subscriptions = new Subscription();
+  isFormValid= true;
 
   constructor(private fb: FormBuilder,
               private activatedRoute: ActivatedRoute,
-              private contactsService: ContactsService) { }
+              private contactsService: ContactsService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -57,13 +59,18 @@ export class EditAddContactComponent implements OnInit, OnDestroy{
 
   onSubmit(): void {
     if (this.contactForm.valid) {
+      this.isFormValid= true;
       const newContact = {
         ...this.editContact,
       ...this.contactForm.value
       }
-      this.editContact ? this.contactsService.updateContact(newContact).subscribe() : this.contactsService.addContact(this.contactForm.value).subscribe();
+      this.editContact ? this.contactsService.updateContact(newContact).subscribe(() => {
+        this.router.navigate(['contacts', this.editContact?.id])
+      }) : this.contactsService.addContact(this.contactForm.value).subscribe(() => {
+        this.router.navigate(['contacts'])
+      });
     } else {
-      console.log('Form is not valid');
+      this.isFormValid= false;
     }
   }
 
