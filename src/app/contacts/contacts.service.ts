@@ -13,18 +13,19 @@ export class ContactsService {
     getContacts(): Observable<Contact[]> {
         return this.http.get<Contact[]>(this.contactsUrl);
     }
-    getContactById(id:string) :Observable<Contact> {
-        return this.http.get<Contact>(`${this.contactsUrl}?id=${id}`);
+
+    getContactByName(name:string) :Observable<Contact> {
+        return this.http.get<Contact>(`${this.contactsUrl}?name=${name}`);
     }
-    deleteContact(id: string) :Observable<Contact> {
-        return this.http.delete<Contact>(`${this.contactsUrl}/${id}`);
+
+    deleteContact(name: string) :Observable<Contact> {
+        return this.http.delete<Contact>(`${this.contactsUrl}/${name}`);
     }
     addContact(contact: Contact): Observable<Contact> {
         return this.http.post<Contact>(this.contactsUrl, contact);
     }
 
     updateContact(contact: Contact): Observable<Contact> {
-        return this.http.put<Contact>(`${this.contactsUrl}/${contact.id}`, contact);
+        return this.http.put<Contact>(`${this.contactsUrl}?name=${contact.name}`, contact);
     }
-
 }

@@ -7,7 +7,7 @@
 <div class="contacts-wrapper">
     <div *ngFor="let contact of (contactsSignal() | sortContactsByName); trackBy: trackByName"
          class="contact-wrapper"
-         (click)="navigateToContactDetails(contact.id)">
+         (click)="navigateToContactDetails(contact.name)">
         <div [ngClass]="contact.isFavorite ? '' : 'hidden'">
             <img src="assets/icons/star-icon.png" style="width: 15px; height: 15px"/>
         </div>
@@ -15,7 +15,7 @@
             <img [src]="contact.image"/>
         </div>
         <div class="detail-wrapper">
-            <span class="name"> {{contact.name | titlecase }}</span>
+            <span class="name"> {{contact.name | titleCase}}</span>
             <span class="address"> {{contact.full_address | titleCase}}</span>
         </div>
     </div>

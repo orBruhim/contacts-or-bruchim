@@ -18,8 +18,9 @@ export class ContactsComponent {
     return  item.name ;
   }
 
-  navigateToContactDetails(id: string) :void {
-    this.router.navigate(['/contacts', id]);
+  navigateToContactDetails(name: string) :void {
+    const formattedName = name.replace(/ /g, '_');
+    this.router.navigate(['/contacts', formattedName]);
   }
 
   navigateToAddContact() :void{

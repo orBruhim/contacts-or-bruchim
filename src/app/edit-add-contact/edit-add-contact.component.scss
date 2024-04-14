@@ -1,0 +1,30 @@
+.contact-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 10px;
+
+  .error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+}
+
+.submit-button {
+  padding: 10px 15px;
+  background-color: green;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
