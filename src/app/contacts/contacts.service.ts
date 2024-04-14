@@ -19,4 +19,12 @@ export class ContactsService {
     deleteContact(id: string) :Observable<Contact> {
         return this.http.delete<Contact>(`${this.contactsUrl}/${id}`);
     }
+    addContact(contact: Contact): Observable<Contact> {
+        return this.http.post<Contact>(this.contactsUrl, contact);
+    }
+
+    updateContact(contact: Contact): Observable<Contact> {
+        return this.http.put<Contact>(`${this.contactsUrl}/${contact.id}`, contact);
+    }
+
 }
