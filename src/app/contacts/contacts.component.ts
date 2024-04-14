@@ -22,4 +22,7 @@ export class ContactsComponent {
     this.router.navigate(['/contacts', id]);
   }
 
+  navigateToAddContact() :void{
+    this.router.navigate(['/add']);
+  }
 }
