@@ -16,4 +16,7 @@ export class ContactsService {
     getContactById(id:string) :Observable<Contact> {
         return this.http.get<Contact>(`${this.contactsUrl}?id=${id}`);
     }
+    deleteContact(id: string) :Observable<Contact> {
+        return this.http.delete<Contact>(`${this.contactsUrl}/${id}`);
+    }
 }

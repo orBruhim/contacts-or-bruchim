@@ -40,4 +40,8 @@ export class ContactDetailsComponent implements OnInit, OnDestroy{
   navigateToEdit() :void {
     this.router.navigate(['edit', this.contact.id])
   }
+  deleteContact() :void {
+    this.subscriptions.add(this.contactsService.deleteContact(this.contact.id).subscribe());
+    this.router.navigate(['/contacts']);
+  }
 }
