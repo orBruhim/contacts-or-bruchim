@@ -1,7 +1,12 @@
+<div class="header-wrapper">
+    <img src="assets/icons/star-icon.png" style="width: 30px; height: 30px"/>
+    <img src="../../assets/icons/edit-icon.png" style="width: 30px; height: 30px" (click)="navigateToEdit()"/>
+</div>
+
 <div *ngIf="contact"
      class="contact-wrapper">
     <div class="img-wrapper">
-        <img  [src]="contact.image"/>
+        <img [src]="contact.image"/>
     </div>
     <div class="detail-wrapper">
         <span class="name"> {{contact.name | titleCase}}</span>

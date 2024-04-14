@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { Subscription, switchMap, tap} from "rxjs";
 import {ContactsService} from "../contacts/contacts.service";
 import {Contact} from "../app.interface";
@@ -13,7 +13,9 @@ export class ContactDetailsComponent implements OnInit, OnDestroy{
 
   subscriptions= new Subscription();
   contact!: Contact;
-  constructor(private activatedRoute: ActivatedRoute, private contactsService: ContactsService) {
+  constructor(private activatedRoute: ActivatedRoute,
+              private contactsService: ContactsService,
+              private router: Router) {
   }
   ngOnInit(): void {
     this.getContact();
@@ -35,4 +37,7 @@ export class ContactDetailsComponent implements OnInit, OnDestroy{
     this.subscriptions.add(sub);
   }
 
+  navigateToEdit() :void {
+    this.router.navigate(['edit', this.contact.id])
+  }
 }
