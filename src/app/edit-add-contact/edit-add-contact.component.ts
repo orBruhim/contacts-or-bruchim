@@ -26,8 +26,7 @@ export class EditAddContactComponent implements OnInit, OnDestroy{
   initializeForm(): void {
     const sub = this.activatedRoute.params.pipe(
         switchMap((params) => {
-          const formattedName = params['name']?.replace(/_/g, ' ');
-          return this.contactsService.getContactByName(formattedName)
+          return this.contactsService.getContactByPhone(params['id'])
         }),
         tap((contact: any) => {
           this.editContact = contact[0];
@@ -58,7 +57,11 @@ export class EditAddContactComponent implements OnInit, OnDestroy{
 
   onSubmit(): void {
     if (this.contactForm.valid) {
-      this.editContact ? this.contactsService.updateContact(this.contactForm.value) : this.contactsService.addContact(this.contactForm.value);
+      const newContact = {
+        ...this.editContact,
+      ...this.contactForm.value
+      }
+      this.editContact ? this.contactsService.updateContact(newContact).subscribe() : this.contactsService.addContact(this.contactForm.value).subscribe();
     } else {
       console.log('Form is not valid');
     }

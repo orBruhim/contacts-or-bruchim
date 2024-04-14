@@ -16,12 +16,12 @@ const routes: Routes = [
         import('./edit-add-contact/edit-add-contact.module').then(({ EditAddContactModule }) => EditAddContactModule),
   },
   {
-    path: 'contacts/:name',
+    path: 'contacts/:id',
     loadChildren: () =>
         import('./contact-details/contact-details.module').then(({ ContactDetailsModule }) => ContactDetailsModule),
   },
   {
-    path: 'edit/:name',
+    path: 'edit/:id',
     loadChildren: () =>
         import('./edit-add-contact/edit-add-contact.module').then(({ EditAddContactModule }) => EditAddContactModule),
   },

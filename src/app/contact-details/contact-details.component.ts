@@ -28,8 +28,7 @@ export class ContactDetailsComponent implements OnInit, OnDestroy{
   private getContact() :void {
     const sub = this.activatedRoute.params.pipe(
         switchMap((params) => {
-          const formattedName = params['name'].replace(/_/g, ' ');
-          return this.contactsService.getContactByName(formattedName);
+          return this.contactsService.getContactByPhone(params['id']);
         }),
         tap((contact: any) => {
           this.contact= contact[0];
@@ -39,11 +38,12 @@ export class ContactDetailsComponent implements OnInit, OnDestroy{
   }
 
   navigateToEdit() :void {
-    this.router.navigate(['edit', this.contact.name])
+    this.router.navigate(['edit', this.contact.id])
   }
 
   deleteContact() :void {
-    this.subscriptions.add(this.contactsService.deleteContact(this.contact.name).subscribe());
-    this.router.navigate(['/contacts']);
+    this.contactsService.deleteContact(this.contact.id).subscribe(() => {
+      this.router.navigate(['/contacts']);
+    })
   }
 }
