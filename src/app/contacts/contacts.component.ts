@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, Signal} from '@angular/core';
 import {ContactsService} from "./contacts.service";
-import { toSignal} from "@angular/core/rxjs-interop";
+import {toSignal} from "@angular/core/rxjs-interop";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-contacts',
@@ -11,10 +12,14 @@ export class ContactsComponent {
 
   contactsSignal = toSignal(this.contactsService.getContacts());
 
-  constructor(private contactsService:ContactsService) {
+  constructor(private contactsService:ContactsService, private router: Router) {
   }
   trackByName(index: number, item: any): string {
     return  item.name ;
+  }
+
+  navigateToContactDetails(id: string) :void {
+    this.router.navigate(['/contacts', id]);
   }
 
 }

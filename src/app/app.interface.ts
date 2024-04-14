@@ -1,4 +1,5 @@
 export interface Contact {
+    id?: string;
     name: string;
     full_address: string;
     email: string;

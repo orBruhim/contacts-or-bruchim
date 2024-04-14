@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactsComponent } from './contacts/contacts.component';
 import {ContactsModule} from "./contacts/contacts.module";
 
 @NgModule({
@@ -13,7 +12,7 @@ import {ContactsModule} from "./contacts/contacts.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ContactsModule
+    ContactsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

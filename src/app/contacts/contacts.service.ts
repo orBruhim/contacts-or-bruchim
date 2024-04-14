@@ -13,4 +13,7 @@ export class ContactsService {
     getContacts(): Observable<Contact[]> {
         return this.http.get<Contact[]>(this.contactsUrl);
     }
+    getContactById(id:string) :Observable<Contact> {
+        return this.http.get<Contact>(`${this.contactsUrl}?id=${id}`);
+    }
 }
