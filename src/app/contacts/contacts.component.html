@@ -1,7 +1,19 @@
+<div class="header-wrapper">
+    <div class="title"> My Contacts</div>
+    <img src="assets/icons/+.png" style="width: 20px; height: 20px"/>
+</div>
+
 <div class="contacts-wrapper">
-    <div *ngFor="let contact of (contactsSignal() | sortContactsByName); trackBy: trackByName">
-        {{contact.name}}
-        <img [src]="contact.image"/>
-        <!--            <img src="assets/images/man1.png">-->
+    <div *ngFor="let contact of (contactsSignal() | sortContactsByName); trackBy: trackByName" class="contact-wrapper">
+        <div [ngClass]="contact.isFavorite ? '' : 'hidden'">
+            <img src="assets/icons/star-icon.png" style="width: 15px; height: 15px"/>
+        </div>
+        <div class="img-wrapper">
+            <img [src]="contact.image"/>
+        </div>
+        <div class="detail-wrapper">
+            <span class="name"> {{contact.name}}</span>
+            <span class="address"> {{contact.full_address}}</span>
+        </div>
     </div>
 </div>
