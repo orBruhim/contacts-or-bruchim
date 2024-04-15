@@ -104,7 +104,7 @@
       "image": "assets/images/man1.png"
     },
     {
-      "id"="191",
+      "id":"8828",
       "name": "Amanda Wilson",
       "full_address": "1415 Birch St, Parktown, USA",
       "email": "amanda.wilson@example.com",
@@ -224,6 +224,18 @@
       "registration_date": "2024-03-25",
       "age": 39,
       "image": "assets/images/woman3.png"
+    },
+    {
+      "id": "49c7",
+      "name": "kd",
+      "full_address": "d",
+      "email": "or@sideliens.io",
+      "phone": 393,
+      "cell": 33,
+      "registration_date": "0333-03-31",
+      "age": 33,
+      "image": "",
+      "isFavorite": true
     }
   ]
 }
