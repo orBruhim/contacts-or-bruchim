@@ -1,3 +1,17 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-wrapper {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  border: 2px solid #80808075;
+}
+
 .contact-form {
   display: flex;
   align-items: center;

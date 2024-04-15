@@ -2,14 +2,11 @@
     <img  *ngIf="contact && contact.isFavorite"x src="assets/icons/star-icon.png" style="width: 30px; height: 30px"/>
     <img src="assets/icons/delete-icon.png" style="width: 27px; height: 27px" (click)="deleteContact()"/>
     <img src="assets/icons/edit-icon.png" style="width: 30px; height: 30px" (click)="navigateToEdit()"/>
-
 </div>
 
 <div *ngIf="contact"
      class="contact-wrapper">
-    <div class="img-wrapper">
-        <img  [src]="contact.image"/>
-    </div>
+        <img class="img-wrapper" [src]="contact.image"/>
     <div class="detail-wrapper">
         <span class="name"> {{contact.name | titleCase}}</span>
         <span class="address"> {{contact.full_address | titleCase}}</span>

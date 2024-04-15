@@ -55,23 +55,30 @@ export class EditAddContactComponent implements OnInit, OnDestroy{
     if (file) {
       // this.contactForm.patchValue({ image: file.name });
     }
+
   }
 
   onSubmit(): void {
     if (this.contactForm.valid) {
       this.isFormValid= true;
-      const newContact = {
-        ...this.editContact,
-      ...this.contactForm.value
-      }
-      this.editContact ? this.contactsService.updateContact(newContact).subscribe(() => {
-        this.router.navigate(['contacts', this.editContact?.id])
-      }) : this.contactsService.addContact(this.contactForm.value).subscribe(() => {
-        this.router.navigate(['contacts'])
-      });
+      this.saveContactAndRedirect();
+
     } else {
       this.isFormValid= false;
     }
+  }
+
+  private saveContactAndRedirect() :void {
+    const newContact = {
+      ...this.editContact,
+      ...this.contactForm.value
+    }
+
+    this.editContact ? this.contactsService.updateContact(newContact).subscribe(() => {
+      this.router.navigate(['contacts', this.editContact?.id])
+    }) : this.contactsService.addContact(this.contactForm.value).subscribe(() => {
+      this.router.navigate(['contacts'])
+    });
   }
 
   ngOnDestroy(): void {

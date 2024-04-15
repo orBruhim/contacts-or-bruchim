@@ -1,3 +1,7 @@
+<div>
+    <img class="img-wrapper" [src]="editContact ? editContact.image : 'assets/images/anonymous.png'" />
+</div>
+
 <div class="contact-form">
     <form *ngIf="contactForm" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
