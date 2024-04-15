@@ -52,7 +52,7 @@ export class EditAddContactComponent implements OnInit, OnDestroy {
     private initializeForm(): void {
         const sub = this.activatedRoute.params.pipe(
             switchMap((params) => {
-                return this.contactsService.getContactByPhone(params['id'])
+                return this.contactsService.getContactById(params['id'])
             }),
             tap((contact: any) => {
                 this.editContact = contact[0];

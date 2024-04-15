@@ -41,7 +41,7 @@ export class ContactDetailsComponent implements OnInit, OnDestroy{
   private getContact() :void {
     const sub = this.activatedRoute.params.pipe(
         switchMap((params) => {
-          return this.contactsService.getContactByPhone(params['id']);
+          return this.contactsService.getContactById(params['id']);
         }),
         tap((contact: any) => {
           this.contact= contact[0];

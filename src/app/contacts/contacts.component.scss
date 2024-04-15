@@ -9,6 +9,12 @@
   margin: 15px;
 }
 
+.left-side-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .contacts-wrapper {
   display: flex;
   flex-direction: column;

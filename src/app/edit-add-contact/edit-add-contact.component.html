@@ -67,12 +67,12 @@
             <input type="file" (change)="onFileSelected($event)" accept="image/*">
         </div>
         <div class="form-group checkbox-group">
-            <label>Is Favorite?</label>
+            <label>Favorite</label>
             <input type="checkbox" formControlName="isFavorite">
         </div>
         <button type="submit" class="submit-button">Submit</button>
         <div *ngIf="!isFormValid" class="form-is-not-valid">
-            Form is not valid please fix the red inputs
+            Form is not valid
         </div>
     </form>
 </div>

@@ -14,7 +14,7 @@ export class ContactsService {
         return this.http.get<Contact[]>(this.contactsUrl);
     }
 
-    getContactByPhone(id:string) :Observable<Contact> {
+    getContactById(id:string) :Observable<Contact> {
         return this.http.get<Contact>(`${this.contactsUrl}?id=${id}`);
     }
 
@@ -27,5 +27,9 @@ export class ContactsService {
 
     updateContact(contact: Contact): Observable<Contact> {
         return this.http.put<Contact>(`${this.contactsUrl}/${contact.id}`, contact);
+    }
+
+    generateRandomContacts() :Observable<any> {
+        return this.http.get<any>(`https://randomuser.me/api/`)
     }
 }
