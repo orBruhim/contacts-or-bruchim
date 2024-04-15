@@ -25,6 +25,19 @@ export class ContactDetailsComponent implements OnInit, OnDestroy{
     this.subscriptions.unsubscribe();
   }
 
+  navigateToEdit() :void {
+    this.router.navigate(['edit', this.contact.id])
+  }
+
+  deleteContact() :void {
+    this.contactsService.deleteContact(this.contact.id).subscribe(() => {
+      this.router.navigate(['/contacts']);
+    })
+  }
+
+    backNavigation() :void {
+      this.router.navigate(['contacts'])
+    }
   private getContact() :void {
     const sub = this.activatedRoute.params.pipe(
         switchMap((params) => {
@@ -35,15 +48,5 @@ export class ContactDetailsComponent implements OnInit, OnDestroy{
         })
     ).subscribe();
     this.subscriptions.add(sub);
-  }
-
-  navigateToEdit() :void {
-    this.router.navigate(['edit', this.contact.id])
-  }
-
-  deleteContact() :void {
-    this.contactsService.deleteContact(this.contact.id).subscribe(() => {
-      this.router.navigate(['/contacts']);
-    })
   }
 }

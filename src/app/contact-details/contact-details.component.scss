@@ -1,7 +1,13 @@
 .header-wrapper {
   display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+}
+
+.right-side-wrapper {
+  display: flex;
   justify-content: right;
-  margin: 19px;
   gap: 9px;
 }
 
