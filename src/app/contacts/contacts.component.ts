@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
 import {ContactsService} from "./contacts.service";
 import {Router} from "@angular/router";
 import { forkJoin, switchMap, tap} from "rxjs";
@@ -14,8 +14,8 @@ import {Contact} from "../app.interface";
 export class ContactsComponent {
 
     contacts$ = this.contactsService.getContacts();
-
-    constructor(private contactsService: ContactsService, private router: Router) {
+    isLoading= false;
+    constructor(private contactsService: ContactsService, private router: Router, private cdr: ChangeDetectorRef) {
     }
 
     trackByName(index: number, item: any): string {
@@ -33,6 +33,7 @@ export class ContactsComponent {
     generateRandomContact(): void {
         const observables$ = [];
         for (let i = 0; i < 10; i++) {
+            this.isLoading= true;
             const obs$ = this.contactsService.generateRandomContacts().pipe(
                 switchMap((data) => {
                     const {name, location, email, phone, cell, picture, registered, id} = data.results[0]
@@ -54,6 +55,8 @@ export class ContactsComponent {
         }
         forkJoin(observables$).pipe(
             tap(() => {
+                this.isLoading= false;
+                this.cdr.detectChanges();
              this.contacts$=  this.contactsService.getContacts();
             })
         ).subscribe()

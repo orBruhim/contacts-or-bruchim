@@ -1,6 +1,7 @@
 <div class="header-wrapper">
     <div class="title"> My Contacts</div>
     <div class="left-side-wrapper">
+        {{isLoading ? 'Loading...' : ''}}
         <img src="assets/icons/plus-icon.png" style="width: 30px; height: 30px" (click)="navigateToAddContact()"/>
         <img src="assets/icons/add-random.png" style="width: 30px; height: 30px" (click)="generateRandomContact()"/>
     </div>
