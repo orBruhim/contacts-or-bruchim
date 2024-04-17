@@ -33,10 +33,11 @@ export class ContactsComponent {
         for (let i = 0; i < 10; i++) {
             const obs$ = this.contactsService.generateRandomContacts().pipe(
                 switchMap((data) => {
+                    console.log(data.results[0])
                     const {name, location, email, phone, cell, picture, registered, id} = data.results[0]
                     const {street} = location;
                     const randomcontact: Contact = {
-                        id: id.value,
+                        id: id.value ? id.value : phone,
                         name: name.first + ' ' + name.last,
                         full_address: street.name + ' ' + street.number,
                         email,
