@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ContactsService} from "../contacts/contacts.service";
@@ -8,7 +8,9 @@ import {Contact} from "../app.interface";
 @Component({
     selector: 'app-edit-add-contact',
     templateUrl: './edit-add-contact.component.html',
-    styleUrls: ['./edit-add-contact.component.scss']
+    styleUrls: ['./edit-add-contact.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class EditAddContactComponent implements OnInit, OnDestroy {
     contactForm!: FormGroup;
@@ -34,10 +36,13 @@ export class EditAddContactComponent implements OnInit, OnDestroy {
         if (this.contactForm.valid) {
             this.isFormValid = true;
             this.saveContactAndRedirect();
-
         } else {
             this.isFormValid = false;
         }
+    }
+
+    backNavigation(): void {
+        this.router.navigate(['contacts', this.editContact?.id || '']);
     }
 
     private initializeForm(): void {
@@ -46,7 +51,6 @@ export class EditAddContactComponent implements OnInit, OnDestroy {
                 return this.contactsService.getContactById(params['id'])
             }),
             tap((contact: any) => {
-                console.log(contact[0])
                 this.editContact = contact[0];
                 this.contactForm = this.fb.group({
                     name: [this.editContact ? this.editContact.name : '', Validators.required],
@@ -77,13 +81,5 @@ export class EditAddContactComponent implements OnInit, OnDestroy {
         }) : this.contactsService.addContact(this.contactForm.value).subscribe(() => {
             this.router.navigate(['contacts'])
         });
-    }
-
-    backNavigation(): void {
-        if (this.editContact) {
-            this.router.navigate(['contacts', this.editContact?.id])
-        } else {
-            this.router.navigate(['contacts'])
-        }
     }
 }

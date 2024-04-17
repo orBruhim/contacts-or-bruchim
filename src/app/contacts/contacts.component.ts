@@ -1,13 +1,15 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {ContactsService} from "./contacts.service";
 import {Router} from "@angular/router";
-import {forkJoin, switchMap, tap} from "rxjs";
+import { forkJoin, switchMap, tap} from "rxjs";
 import {Contact} from "../app.interface";
 
 @Component({
     selector: 'app-contacts',
     templateUrl: './contacts.component.html',
-    styleUrls: ['./contacts.component.scss']
+    styleUrls: ['./contacts.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class ContactsComponent {
 
@@ -33,7 +35,6 @@ export class ContactsComponent {
         for (let i = 0; i < 10; i++) {
             const obs$ = this.contactsService.generateRandomContacts().pipe(
                 switchMap((data) => {
-                    console.log(data.results[0])
                     const {name, location, email, phone, cell, picture, registered, id} = data.results[0]
                     const {street} = location;
                     const randomcontact: Contact = {

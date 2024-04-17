@@ -15,7 +15,6 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forChild(routes),
     SharedModule,
-      CommonModule
   ]
 })
 export class ContactsModule { }
