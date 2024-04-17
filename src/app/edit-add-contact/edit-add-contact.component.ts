@@ -30,15 +30,6 @@ export class EditAddContactComponent implements OnInit, OnDestroy {
         this.subscriptions.unsubscribe();
     }
 
-    onFileSelected(event: Event): void {
-        console.log(event.target)
-        const file = event.target
-        if (file) {
-            // this.contactForm.patchValue({ image: file.name });
-        }
-
-    }
-
     onSubmit(): void {
         if (this.contactForm.valid) {
             this.isFormValid = true;
@@ -55,13 +46,14 @@ export class EditAddContactComponent implements OnInit, OnDestroy {
                 return this.contactsService.getContactById(params['id'])
             }),
             tap((contact: any) => {
+                console.log(contact[0])
                 this.editContact = contact[0];
                 this.contactForm = this.fb.group({
                     name: [this.editContact ? this.editContact.name : '', Validators.required],
                     full_address: [this.editContact ? this.editContact.full_address : '', Validators.required],
                     email: [this.editContact ? this.editContact.email : '', [Validators.required, Validators.email]],
-                    phone: [this.editContact ? +this.editContact.phone : '', Validators.required],
-                    cell: [this.editContact ? +this.editContact.cell : ''],
+                    phone: [this.editContact ? +this.editContact.phone.replace(/-/g, '') : '', Validators.required],
+                    cell: [this.editContact ? +this.editContact.cell.replace(/-/g, '') : ''],
                     registration_date: [this.editContact ? this.editContact.registration_date : '', Validators.required],
                     age: [this.editContact ? this.editContact.age : null, [Validators.required, Validators.min(0)]],
                     image: [this.editContact ? this.editContact.image : ''],
