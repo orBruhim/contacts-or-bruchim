@@ -9,7 +9,6 @@ import {Contact} from "../app.interface";
     selector: 'app-edit-add-contact',
     templateUrl: './edit-add-contact.component.html',
     styleUrls: ['./edit-add-contact.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
 
 })
 export class EditAddContactComponent implements OnInit, OnDestroy {

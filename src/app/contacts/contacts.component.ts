@@ -8,7 +8,6 @@ import {Contact} from "../app.interface";
     selector: 'app-contacts',
     templateUrl: './contacts.component.html',
     styleUrls: ['./contacts.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
 
 })
 export class ContactsComponent {

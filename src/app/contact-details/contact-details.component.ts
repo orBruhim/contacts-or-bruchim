@@ -8,7 +8,6 @@ import {Contact} from "../app.interface";
   selector: 'app-contact-details',
   templateUrl: './contact-details.component.html',
   styleUrls: ['./contact-details.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactDetailsComponent implements OnInit, OnDestroy{
 
